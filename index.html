@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- 추가적용한 것 : 최소스케일 minimum-scale=1.0, 최대스케일 maximum-scale=1.0, 사용자가 내 화면 스케일을 마음대로 확대축소 못하게 user-scalable=no -->
+    <title>My Blog</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link href="css/headerfooter.css" rel="stylesheet" type="text/css">
+    <link href="images/favicon/favicon.ico" rel="shortcut icon">
+    <link href="images/favicon/touch.png" rel="apple-touch-icon-precomposed">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="js/flat.min.js"></script>  <!-- 이것은 무조건 아래에!!! -->
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <section class="info_section">
+            <ul class="info_list">
+                <li>
+                    <a href="index.html">
+                        <img src="images/s_images/info_icon_01.png" alt="집 이미지">
+                    </a>  <!-- 홈으로 가기-->
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/s_images/info_icon_02.png" alt="자물쇠 이미지">
+                    </a>  <!-- 로그인-->
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/s_images/info_icon_03.png" alt="사람 이미지">
+                    </a>  <!-- 회원가입-->
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/s_images/info_icon_04.png" alt="돋보기 이미지">
+                    </a>  <!-- 검색-->
+                </li>
+            </ul>            
+        </section>
+        <header class="header">
+            <h1 class="logo">
+                <a href="index.html">나의 첫<br/>블로그</a>
+            </h1>
+            <nav class="nav">
+                <ul class="gnb">
+                    <li>
+                        <a href="index.html">홈</a>
+                        <span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+                    </li>
+                    <li>
+                        <a href="introduce.html">회사소개</a>
+                        <span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+                    </li>
+                    <li>
+                        <a href="gallery.html">갤러리</a>
+                        <span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+                    </li>
+                    <li>
+                        <a href="board.html">게시판</a>
+                        <span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+                    </li>
+                </ul>
+            </nav>
+            <span class="menu_toggle_btn">전체 메뉴 토글 버튼</span>
+        </header>
+        <section class="slider_section">
+            <span class="prev_btn">이전 버튼</span><!--여기서 띄어쓰기나 엔터키 금지--><span class="next_btn">다음 버튼</span>   <!--이미지는 css에서 백그라운드로 넣을 예정-->
+        </section>
+        <section class="latest_post_section">
+            <h1 class="title">최근 글</h1>
+            <ul class="latest_post_list">
+                <li><a href="#">홈페이지를 오픈했습니다</a></li>
+                <li><a href="#">홈페이지를 리뉴얼했습니다</a></li>
+                <li><a href="#">홈페이지를 페쇄했습니다</a></li>
+                <li><a href="#">홈페이지를 다시오픈했습니다</a></li>
+                <li><a href="#">홈페이지를 꾸몄습니다</a></li>
+            </ul>
+        </section>
+        <section class="popular_post_section">
+            <h1 class="title">인기 글</h1>
+            <ul class="popular_post_list">
+                <li><a href="#">HTML을 배웠습니다</a></li>
+                <li><a href="#">CSS를 배웠습니다</a></li>
+                <li><a href="#">자바스크립트를 배웠습니다</a></li>
+                <li><a href="#">JQuery를 배웠습니다</a></li>
+                <li><a href="#">반응형 웹을 배웠습니다</a></li>
+            </ul>
+        </section>
+        <section class="gallery_section">
+            <ul class="gallery_list">
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="images/p_images/gallery_01.jpg" alt="우주선 이미지">
+                            <figcaption>이미지 설명 1</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="images/p_images/gallery_02.jpg" alt="구름 이미지">
+                            <figcaption>이미지 설명 2</figcaption>
+                        </figure>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="rankup_section">
+            <h2 class="title">인기 검색어</h2>
+            <ul class="rankup_list">
+                <li><a href="#">반응형 웹</a></li>
+                <li><a href="#">미디어 쿼리</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">자바스크립트</a></li>
+                <li><a href="#">JQuery</a></li>
+                <li><a href="#">프론트엔드</a></li>
+                <li><a href="#">React.js</a></li>
+                <li><a href="#">뷰포트</a></li>
+                <li><a href="#">Node.js</a></li>
+            </ul>
+        </section>
+        <section class="banner_section">
+            <div class="banner_box_01">
+                <a href="#">
+                    <img src="images/s_images/banner_logo_00.png" alt="W3C(HTML,CSS 표준을 만든 재단) 이미지">
+                </a>
+            </div>
+            <div class="banner_box_02">
+                <ul class="banner_list">
+                    <li>
+                        <a href="#"><img src="images/s_images/banner_logo_01.png" alt="주황이미지"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/s_images/banner_logo_02.png" alt="파랑이미지"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/s_images/banner_logo_03.png" alt="노랑 이미지"></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="social_section">
+            <ul class="social_list">
+                <li>
+                    <a href="#"><img src="images//s_images/social_icon_01.png" alt="빨강 트위터 로고 이미지"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images//s_images/social_icon_02.png" alt="페이스북 로고 이미지"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images//s_images/social_icon_03.png" alt="보라 구글 이미지"></a>
+                </li>
+            </ul>
+        </section>
+        <section class="footer">
+            <p>&copy; 2022. My Blog. All Rights Reserved.</p>
+        </section>
+    </div>
+</body>
+</html>
