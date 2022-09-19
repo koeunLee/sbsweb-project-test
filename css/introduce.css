@@ -1,0 +1,112 @@
+/* 모바일용 CSS */
+/* 모바일 - 컨텐츠 영역 CSS */
+.content_section > div {
+    margin-top: 60px;
+}
+
+.content_section > div:first-child {
+    margin-top: 0;
+}
+
+.content_row_1 img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.content_row_1 h3 {
+    margin: 26px 0 14px 0;
+    font-size: 1.625em;
+    color: #333;
+    text-align: center;   /* 가운데 정렬 */
+}
+
+.content_row_1 p {
+    font-size: 0.938em;
+    line-height: 1.625em;  /* 보통 글씨의 1.2~1.5배 정도로 한다 */
+    color: #444;
+    text-align: justify;   /* 양쪽 정렬 */
+}
+
+.content_row_2 article {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.content_row_2 article:first-child {
+    margin-top: 0;
+}
+
+.content_row_2 img {
+    max-width: 100%;
+}
+
+.content_row_2 h4 {
+    margin: 26px 0 14px 0;
+    font-size: 1.188em;  
+    color: #333; 
+}
+
+.content_row_2 p {
+    font-size: 0.813em;
+    line-height: 1.313em;
+    color: #444;
+    text-align: justify;
+}
+
+.content_row_3 h4 {
+    margin-bottom: 20px;
+    padding-bottom: 8px;   /* 글씨와 아래 선 사이의 간격 */
+    font-size: 1.188em; 
+    border-bottom: 3px solid #2ecc71;
+    color: #333;
+}
+
+/* .para p:first-child {
+    margin-bottom: 30px;
+} */
+
+.para p:not(:last-child) {  
+    /* para 클래스 아래에 있는 p 태그에 대해서
+    last-child(마지막 자식)을 제외한 모든 요소 */
+    margin-bottom: 30px;
+}
+
+.para p {
+    font-size: 0.813em;
+    line-height: 1.313em;
+    color: #444;
+    text-align: justify;
+}
+
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    /* 모바일 - 컨텐츠 영역 CSS */
+    .content_section > div {
+        margin-top: 120px;
+    }
+}
+
+/* PC용 CSS */
+@media all and (min-width: 960px) {
+    /* PC - 컨텐츠 영역 CSS */
+    .content_row_2 {
+        display: flex;   /* block 요소인 article을 가로 정렬하기 위해 */
+        justify-content: space-between;
+    }
+
+    .content_row_2 > article {
+        margin-top: 0;
+        width: 30%;
+    }
+
+    .para {
+        display: flex;   /* block 요소인 p 태그를 가로 정렬하기 위해 */
+        justify-content: space-between;
+    }
+
+    .para p {
+        width: 48%;
+        margin: 0;   /* 모바일에서 준 margin 삭제 */
+    }
+}

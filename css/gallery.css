@@ -1,0 +1,162 @@
+/* 모바일용 CSS */
+/* 모바일 - 컨텐츠 영역 CSS */
+.gallery_list img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    transition: all 0.4s;
+    -webkit-filter: grayscale(1);   /* (Chrome 18, Opera 15, Safari 6) 브라우저 버전에서 작동. 브라우저 버전마다 작동되는 것이 다르므로 -webkit 을 주는데 항상 -webkit 이 일반보다 윗줄에 와야 함 */
+    filter: grayscale(1);   /* (Edge 12, Firefox 35, Safari 9, Chrome 53, Opera 40) 브라우저 버전에서 작동 */
+}
+
+.gallery_list img:hover {
+    /* 이미지에 마우스 가져다 데었을 때 흑백->컬러로 보이게 */
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.gallery_list li {
+    margin-top: 20px;
+}
+
+.gallery_list li:nth-child(1) {
+    margin-top: 0;
+}
+
+.content_row_2 {
+    display: flex;   /* 가로 방향 정렬로 바꾸기 위해 */
+    justify-content: space-between;
+    margin: 30px 0 40px 0;
+}
+.search_window {
+    width: 120px;
+    height: 28px;
+    font-size: 0.688em;
+    text-indent: 10px;   /* 글씨 앞에 공간주는 것 */
+}
+
+.search_select_box {
+    display: none;   /* 모바일에서는 검색필터 안보이게 */ 
+}
+
+.write_box a {
+    display: block;    /* inline 요소인 a태그를 block요소로 변경 */
+    background-color: #e65d5d;  
+    width: 70px; 
+    height: 30x;   /* 버튼처럼 보일 예정이라 가변이 아니어도 되므로 고정값 */
+    text-align: center;
+    line-height: 30px;
+    font-size: 0.813em;
+}
+
+.content_row_3 {
+    display: flex;
+    justify-content: center;
+}
+
+.content_row_3 a {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #219af7;
+    color: #219af7;
+    text-align: center;
+    line-height: 26px;
+    transition: all 0.4s;
+}
+
+.content_row_3 a:hover {
+    background-color: #219af7;
+    color: white;
+}
+
+.content_row_3 a:nth-of-type(2) {
+    margin: 0 6px;
+}
+
+.content_row_3 span {
+    width: 28px;
+    height: 28px;
+    text-indent: -9999px;
+}
+
+.content_row_3 span.list_prev_btn {
+    background: #2ecc71 url(../images/s_images/list_prev_btn.png) center center no-repeat;
+    margin-right: 10px;
+}
+
+.content_row_3 span.list_next_btn {
+    background: #2ecc71 url(../images/s_images/list_next_btn.png) center center no-repeat;
+    margin-left: 10px;
+}
+
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    /* 태블릿 - 컨텐츠 영역 CSS */
+    .gallery_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .gallery_list li {
+        width: 48%;
+    }
+
+    .gallery_list li:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .search_select_box {
+        display: inline-block;  /* 모바일에서 display: none;으로 안보이게 했던 것을 옆으로 보여지게 */
+        position: relative;
+    }
+
+    .search_select_box span {
+        display: inline-block;
+        width: 80px;
+        height: 30px;
+        background-color: #e65d5d;
+        color: white;
+        font-size: 0.813em;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    .search_select_list {
+        display: none;  /* 아래 4줄 먼저 만들고 나중에 설정 */
+
+        position: absolute;
+        top: 105%;    /* top: 100%; 는 위의 span에 딱 붙으므로 5% 정도 아래로 내리기 위해*/
+        left: 0%;
+        width: 100%;
+    }
+
+    .search_select_list li {
+        background-color: #e65d5d;
+        color: white;
+        cursor: pointer;
+
+        padding: 6px 0;
+        font-size: 0.75em;
+        text-indent: 10px;
+    }
+
+    .search_select_box:hover .search_select_list {
+        display: block;
+    }
+}
+
+
+/* PC용 CSS */
+@media all and (min-width: 960px) {
+    /* PC- 컨텐츠 영역 CSS */
+    .gallery_list li {
+        width: 23%;
+    }
+    .gallery_list li:nth-child(3),
+    .gallery_list li:nth-child(4) {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,416 @@
+/* 변수 */
+:root {
+    --main-color: #2ecc71;
+    --main-color-booder: #39d67c;
+    --logo-text-shadow: #25ab2e;
+
+    --nav-background-color: #2c3e50;
+
+    --latest_post-background-color: #ffc40f;
+    --latest_post-text-shadow: #b98e0b;
+
+    --title: #fff;  /* 최근 글, 인기 글 */
+
+    --popular_post-background-color: #a660c2;
+    --popular_post-text-shadow: #714185;
+
+    --gallery-background-color: #e65d5d;
+    --gallery-shadow: #c43434;
+
+    --rankup-background-color: #219af7;
+    --rankup-text-shadow: #1974ba;
+    --rankup_list-border: white;
+
+    --white: #fff;  /* white 색상을 이렇게 표현하기도 한다 */
+
+    --banner_box_01-background-color: #e6567a;
+    --banner_box_02-background-color: #c44968;
+
+    --social_section-background-color: #fff;
+
+    --footer-background-color: #474747;
+    --footer-text-shadow: #191919;
+}
+
+
+/* 모바일용 CSS */
+/* 모바일 - 슬라이더 영역 CSS */
+.slider_section {
+    order: 3;
+    display: flex;
+    justify-content: space-between;  /* 주축방향으로 양 끝에 배치 */
+    align-items: center;             /* 교차축 방향으로 가운데 배치 */
+    width: 100%;
+    height: 300px;
+    background: url(../images/p_images/slider_01.jpg) center center no-repeat;
+}
+
+.slider_section span {
+    width: 34px;   /* 만든 이미지 가로 절반크기 */
+    height: 39px;  /* 만든 이미지 세로크기 */
+    text-indent: -9999px;   /* 글씨 안보이게 저멀리 치우기 */ 
+    background: url(../images/s_images/slider_arrow.png) no-repeat;
+}
+
+.slider_section span.prev_btn {
+    margin-left: -10px;    /* 좌측 바깥으로 10px 밀어내기 위해 */
+    background-position: 0 0;  /* background-position: x축 위치 y축 위치; */
+}
+
+.slider_section span.next_btn {
+    margin-right: -10px;   /* 우측 바깥으로 10px 밀어내기 위해 */
+    background-position: -34px 0;  /* background-position: x축 위치 y축 위치; */
+}
+
+/* 모바일 - 최근 글, 인기 글 영역 CSS */
+.latest_post_section {
+    order: 4;
+    background-color: var(--latest_post-background-color);
+    text-shadow: 0 1px 1px var(--latest_post-text-shadow);
+}
+
+.popular_post_section {
+    order: 5;
+    background-color: var(--popular_post-background-color);
+    text-shadow: 0 1px 1px var(--popular_post-text-shadow);
+}
+
+.latest_post_section,
+.popular_post_section {
+    padding: 40px 12.5%;   /* 위아래 고정패딩, 좌우 반응형 패딩 40/320*100 */
+}
+
+.title {
+    font-size: 1.188em;
+    text-align: center;
+    color: var(--title);
+    margin-bottom: 30px;  
+}
+
+.latest_post_list li,
+.popular_post_list li {
+    margin-top: 15px;
+    font-weight: bold;
+    background: url(../images/s_images/post_circle_icon.png) left center no-repeat;
+    padding-left: 14px;
+} 
+
+.latest_post_list li:first-child,
+.popular_post_list li:first-child {
+    margin-top: 0;
+}
+
+/* 모바일 - 갤러리 영역 CSS */
+.gallery_section {
+    order: 6;
+    padding: 50px 12.5%;   /* 위아래 고정패딩, 좌우 반응형 패딩 40/320*100 */
+    background-color: var(--gallery-background-color);
+    text-align: center;
+    text-shadow: 0 1px 1px var(--gallery-shadow);
+}
+
+.gallery_section img {
+    width: 100%;    /* 이미지 크기가 커서 넘치므로 줄인다 -> padding 크기 제외하고 안넘치고 최대한 크게 하는 것 */ 
+    max-width: 100%;   /* 이미지 크기 조절시 해상도 깨지지 않게 이미지 본래 너비보다 더 커지지 않게하는 것 */
+    border-radius: 3px;
+    box-shadow: 0 1px 1px var(--gallery-shadow);
+}
+
+.gallery_list li:nth-child(2) {
+    margin-top: 30px;
+}
+
+.gallery_list li figcaption {
+    margin-top: 20px;
+    font-size: 1.188em;
+    font-weight: bold;
+}
+
+/* 모바일 - 인기 검색어 영역 CSS */
+.rankup_section {
+    order: 7;
+    background-color: var(--rankup-background-color);
+    padding: 40px 12.5%;   /* 위아래 고정패딩, 좌우 반응형 패딩 40/320*100 */
+    text-shadow: 0 1px 1px var(--rankup-text-shadow);
+}
+
+.rankup_list {
+    display: flex;  /* 가로 방향으로 */
+    flex-wrap: wrap;   /* 여러줄 */
+    justify-content: space-between;
+}
+
+.rankup_list li {
+    width: 47.91667%;  /* (320-40-40-사이간격10)을 2로 나누고 또 이것을 (320-40-40)으로 나눈다 -> 115/240*100=47.91666666666667 */
+    margin-top: 15px;
+}
+
+.rankup_list li:first-child,
+.rankup_list li:nth-child(2) {
+    margin-top: 0;
+}
+
+.rankup_list li a {
+    border: 1px solid var(--rankup_list-border);
+    border-radius: 5px;
+
+    display: block;   /* a태그에 display: block; 속성을 주어 width값이 나타나게 함 */
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 모바일 - 배너 영역 CSS */
+.banner_section {
+    order: 8;
+}
+
+.banner_box_01 {
+    background-color: var(--banner_box_01-background-color);
+}
+
+.banner_box_02 {
+    background-color: var(--banner_box_02-background-color);
+}
+
+.banner_box_01 a {
+    display: block;   /* inline 요소인 a태그를 block 요소로 바꿈 */
+    text-align: center;
+    padding: 30px 0;
+}
+
+.banner_list {
+    display: flex;   /* 기본값인 가로배치됨 */
+    justify-content: space-between;
+    padding: 30px 12.5%;   /* 위아래 고정패딩, 좌우 반응형 패딩 40/320*100 */
+}
+
+/* 모바일 - SNS 영역 CSS */
+.social_section {
+    order: 9;
+    padding: 30px 12.5%;   /* 위아래 고정패딩, 좌우 반응형 패딩 40/320*100 */
+    background-color: var(--social_section-background-color);
+}
+
+.social_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    /* 태블릿 - 슬라이더 영역 CSS */
+    .slider_section {
+        width: 59.89583%;   /* 460px/768px*100=59.89583333333333% */
+        height: auto;  /* 모바일에서 적용한 높이를 자동으로 변경. 나중에 옆에 생기는 영역에 영향을 받을 것임 */
+    }
+
+    .slider_section span {
+        z-index: 10;  /* 네비게이션 메뉴 > 슬라이더 버튼 > 나머지 */
+        position: relative;
+    }
+
+    /* 태블릿 - 최근 글, 인기 글 영역 CSS */
+    .latest_post_section {
+        order: 5;
+    }
+
+    .popular_post_section {
+        order: 6;
+    }
+
+    .latest_post_section,
+    .popular_post_section {
+        width: 31.25%;    /* 240px/768px*100=41.66666666666667*/
+        padding-left: 5.20833%;
+        padding-right: 5.20833%;   /* 모바일에서 주었던 반응형 패딩을 태블릿용 반응형 패딩으로 변경  40px/320px*100=12.5% ---> 40px/768px*100=5.20833% */
+    }
+
+    /* 태블릿 - 갤러리 영역 CSS */
+    .gallery_section {
+        order: 8;
+        width: 60.9375%;  /* 468px/768px*100=71.35416666666667 */
+        padding-left: 5.20833%;
+        padding-right: 5.20833%;   /* 모바일에서 주었던 반응형 패딩을 태블릿용 반응형 패딩으로 변경  40px/320px*100=12.5% ---> 40px/768px*100=5.20833% */
+    }
+
+    .gallery_list {
+        display: flex; /* 기본값인 가로형으로 보이게 됨 */
+    }
+
+    .gallery_list li:nth-child(2) {
+        margin-top: 0;
+        margin-left: 5.98290%;  /* 28px/갤러리의 태블릿 너비에서 좌우 패딩 뺀 값*100 = 28px/(548-40-40)px*100 = 28px/468px*100 = 5.982905982905983 */
+    }
+
+    .gallery_list li {
+        width: 47.00855%;  /* (548-40-40-28)/2를 (548-40-40)로 우선 나눈다. -> 220px/468px*100=47.00854700854701 */
+
+        /* (47.00855*2)+5.98290=100% */
+    }
+
+    /* 태블릿 - 인기 검색어 영역 CSS */
+    .rankup_section {
+        order: 4;
+        width: 29.6875%;   /* (768-슬라이더영역460-40-40)/768*100=228px/768px*100=29.6875 */
+        padding-left: 5.20833%;
+        padding-right: 5.20833%;   /* 모바일에서 주었던 반응형 패딩을 태블릿용 반응형 패딩으로 변경  40px/320px*100=12.5% ---> 40px/768px*100=5.20833% */
+    }
+
+    /* 태블릿 - 배너 영역 CSS */
+    .banner_section {
+        order: 9;
+        width: 28.64583%;   /* (768-갤러리영역468-40-40)/768*100=220/768*100=28.64583333333333 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner_section div {
+        flex: 1 1 0;
+    }
+
+    .banner_box_01 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner_box_01 a {
+        display: inline;  /* 모바일에서 inline 요소인 a태그를 block 요소로 바꿈 -> 여기서 다시 inline 요소로 되돌린다.  */
+        padding: 0;   /* 모바일에서 가운데 정렬을 위해 주었던 padding 삭제(태블릿에서 flex로 가운데 정렬했기 때문에 필요없어졌기 때문) */
+    }
+
+    .banner_box_02 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner_list {
+        padding: 0;  /* 모바일에서 주었던 padding 필요없어져서 삭제 */
+        justify-content: flex-start;  /* 모바일에서 주었던 justify-content: space-between;을 필요없어져서 기본값인 justify-content: flex-start; 으로 변경 */
+    }
+
+    .banner_list li {
+        margin: 0 8px;  /* 8px은 미미하므로 반응형으로 안 바꾼다 */
+    }
+
+    /* 태블릿 - SNS 영역 CSS */
+    .social_section {
+        order: 7;
+        width: 16.66667%;   /* (768-최근글 영역240-인기글 영역240-40-40-40-40)/768*100=128/768*100=16.66666666666667 */
+        padding: 0;  /* 모바일에서 주었던 padding 삭제 */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social_list {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .social_list li:nth-child(2) {
+        margin: 24px 0;
+    }
+}
+
+
+/* PC용 CSS */
+@media all and (min-width: 960px) {
+    /* PC - 슬라이더 영역 CSS */
+    .slider_section {
+        order: 2;
+        width: 50%;  /* 480px/960px*100 */
+    }
+
+    /* PC - 최근 글, 인기 글 영역 CSS */
+    .latest_post_section,
+    .popular_post_section {
+        width: 30%;
+        padding-left: 0;
+        padding-right: 0;
+
+        display: flex;
+        flex-direction: column;  
+        align-items: center;   /* flex를 이용하여 가운데 정렬*/
+    }
+
+    /* PC - 갤러리 영역 CSS */
+    .gallery_section {
+        order: 3;
+        width: 18.75%;  /* 180px/960px*100 */
+        padding: 40px 4.16667%;  /* 태블릿에서 주었던 좌우 반응형 패딩을 PC용 반응형 패딩으로 변경  40px/960px*100=4.166666666666667% */
+    }
+
+    .gallery_list {
+        /* 세로 정렬로 만드는 방법1
+        display: flex;
+        flex-direction: column; */
+        display: block;  /* 세로 정렬로 만드는 방법2 */
+    }
+
+    .gallery_list li {
+        width: auto;  /* 태블릿에서 지정한 너비를 auto로 수정, 자동으로 크기에 맞춤 */
+    }
+
+    .gallery_list li:nth-child(2) {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    /* PC - 인기 검색어 영역 CSS */
+    .rankup_section {
+        display: flex;
+        flex-direction: column;
+        width: 22.91667%;  /* (960-슬라이더 너비480-갤러리 너비180-갤러리 좌우 패딩80)/960*100=220px/960px*100=22.91666666666667 */
+        padding: 40px 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rankup_list {
+        /* 세로 정렬로 만드는 방법1
+        display: flex;
+        flex-direction: column; */
+        display: block;  /* 세로 정렬로 만드는 방법2 */
+    }
+
+    .rankup_list li:nth-child(2) {
+        margin-top: 15px;
+    }
+
+    .rankup_list li {
+        width: auto;  /* 너비를 auto로 수정, 자동으로 크기에 맞춤 */
+        text-align: left;  /* 원래 left 라서 표시 안남 */
+        counter-increment: rankup-counter;  /* rankup-counter은 변수name */
+    }
+
+    .rankup_list li::before {
+        content: counter(rankup-counter) '.';  /* counter(변수name) 뒤에 한칸 띄우고  ''안에 추가로 넣고 싶은 것 추가 가능하다. 여기서는 점 1개만 추가했다 */
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 1px 1px #428e9e;  /* 옆의 글씨의 그림자 색상(#1974ba)과 조금 다른 것으로 줘봤다 */
+        padding-right: 6px;    /* PC영역에서만 있는 것이라 반응형으로 안바꿈 */
+    }
+
+    .rankup_list li a {
+        display: inline;
+        padding: 0;
+        border: 0;
+    }
+
+    /* PC - 배너 영역 CSS */
+    .banner_section {
+        order: 7;
+        width: 22.91667%;  /* 220px/960px*100=22.91666666666667 */
+    }
+
+    /* PC - SNS 영역 CSS */
+    .social_section {
+        order: 8;
+        width: 17.08333%;  /* (100%-최근글 영역30%-인기글 영역30%-배너 영역22.91667%=17.08333% */
+    }
+}

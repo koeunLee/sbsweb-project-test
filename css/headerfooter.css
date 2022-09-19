@@ -1,0 +1,290 @@
+/* 변수 */
+:root {
+    --main-color: #2ecc71;
+    --main-color-booder: #39d67c;
+    --logo-text-shadow: #25ab2e;
+
+    --nav-background-color: #2c3e50;
+
+    --latest_post-background-color: #ffc40f;
+    --latest_post-text-shadow: #b98e0b;
+
+    --title: #fff;  /* 최근 글, 인기 글 */
+
+    --popular_post-background-color: #a660c2;
+    --popular_post-text-shadow: #714185;
+
+    --gallery-background-color: #e65d5d;
+    --gallery-shadow: #c43434;
+
+    --rankup-background-color: #219af7;
+    --rankup-text-shadow: #1974ba;
+    --rankup_list-border: white;
+
+    --white: #fff;  /* white 색상을 이렇게 표현하기도 한다 */
+
+    --banner_box_01-background-color: #e6567a;
+    --banner_box_02-background-color: #c44968;
+
+    --social_section-background-color: #fff;
+
+    --footer-background-color: #474747;
+    --footer-text-shadow: #191919;
+}
+
+
+/* 모바일용 CSS */
+/* 기본 CSS */
+#wrap {
+    display: flex;
+    flex-flow: column nowrap; /* 세로 방향 세로기준 한줄 */ 
+    width: 80%;  /* 모바일과 태블릿은 80%가 적당 */
+    margin: 0 auto;
+    max-width: 1200px;  /* 최대너비 제한하기 */
+}
+
+/* 모바일 - 인포 영역 CSS */
+.info_section {
+    order: 1;
+    width: 100%;
+    background-color: var(--main-color);
+    border-bottom: 1px solid var(--main-color-booder);
+}
+
+.info_list {
+    display: flex;
+
+}
+
+.info_list li {
+    width: 25%;
+    text-align: center;
+}
+
+.info_list li a {
+    display: block;
+    padding: 15px 0;
+}
+
+/* 모바일 - 헤더 영역 CSS */
+.header {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    position: relative;  /* 자식요소인 .menu_toggle_btn 에 position: absolute; 를 주기 위해서 */
+    width: 100%;
+}
+
+.logo {
+    order: 1;  /* order 2번 중 1번이다 */
+    width: 100%;
+    padding: 30px 0;
+    font-size: 1.188em;
+    line-height: 21px;
+    text-align: center;
+    background-color: var(--main-color);
+    text-shadow: 0 1px 1px var(--logo-text-shadow);
+}
+
+.nav {
+    order: 2;  /* order 2번 중 2번이다 */
+    width: 100%;
+}
+
+.gnb {
+    display: none;   /* 맨 나중에 만드는 설정이다. 모바일과 태블릿에서 안보이게 해놓고 제이쿼리와 자바스크립트로 햄버거 버튼에 마우스 클릭했을 때 보여지게 할 예정 */
+}
+
+.gnb li {
+    display: flex;
+    background-color: var(--nav-background-color);
+}
+
+.gnb li a {
+    width: 80%;
+    padding: 20px 0 20px 20px;   /* 위 오른쪽 아래 왼쪽(시계방향) */
+    font-size: 0.938em;
+    font-weight: bold;
+}
+
+.gnb li span {
+    width: 20%;
+    text-indent: -9999px;   /* 글씨를 주었던 것을 왼쪽으로 -9999px 이동시켜 안보이게 치운다. (글씨는 허상) 그리고 그 자리에 이미지를 넣어 대체한다. */
+    background-image: url(../images/s_images/sub_menu_toggle_btn.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* 위 세 줄을 한 번에 표현하는 법
+    background: url(../images/s_images/sub_menu_toggle_btn.png) center center no-repeat; */
+    cursor: pointer;
+}
+
+.menu_toggle_btn {
+    display: block;   /* span이라 inline인데 block으로 변경 */
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    /* 이 버튼이 포함되어 있는 부모인 header 클래스가 position: relative; 이기 때문에 위치를 변경하기 위해서는 position: absolute; 로 설정해야 함 */
+    top: 10px;
+    right: 10px;
+    text-indent: -9999px;
+    background: url(../images/s_images/menu_toggle_btn.png);  /* 햄버거 아이콘 */
+    cursor: pointer;
+}
+
+/* 모바일 - 푸터 영역 CSS */
+.footer {
+    order: 10;
+    width: 100%;
+    background-color: var(--footer-background-color);
+}
+
+.footer p {
+    color: #fff;
+    text-align: center;
+    font-size: 0.813em;
+    padding: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px var(--footer-text-shadow);
+}
+
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    /* 기본 CSS */
+    #wrap {
+        display: flex; /* 모바일에 적용되었던 것과 동일하므로 안줘도 됨 */
+        flex-flow: row wrap; /* 가로 방향 가로기준 여러줄 */
+        width: 80%;  /* 모바일에 적용되었던 것과 동일하므로 안줘도 됨 */
+    }
+
+    /* 태블릿 - 헤더 영역 CSS */
+    .header {
+        /* display: flex; 를 다시 쓰지 않는 이유 --> 모바일에서 이미 display: flex; 를 정의해주었기 때문에 이를 상속받아서 그대로 사용 */
+        flex-direction: row;  
+        /* 모바일에서는 세로 방향이었지만, 태블릿에서는 가로 방향으로 놓기 위해서 row로 설정 */
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 0;   /* 여기서 뒤에 nav가 깔리면서 겹친 상태가 된다 */
+        width: 15.625%;   /* 120px/768px*100  (태블릿이므로 960px이 아닌 768px로 나눈다.) */
+        z-index: 10;
+        padding: 0;   /* 모바일에서 준 padding 삭제 */
+    }
+
+    .logo a {
+        display: block;
+        padding: 50px 0;
+    }
+
+    .nav {
+        position: relative;
+        min-height: 80px;   /* 최소 높이 임의지정 */
+        background-color: var(--main-color);
+    }
+
+    .gnb {
+        position: absolute;  /* 자동으로 기본값이 적용되어 좌측위로 쏠림 */
+        top: 100%;  /* 위에서 100% 내려옴(nav 최소높이 임의 지정한 80px) */
+        right: 0;   /* 오른쪽으로 쏠리게 됨 */
+        width: 40.10416%;    /* 308px/768px*100=40.10416666666667% */
+        z-index: 20;  /* 태블릿에서 햄버거 버튼을 누르면 뜨는 것이므로 최대한 위에 뜨게 */
+    }
+
+    .menu_toggle_btn {
+        top: 25px;   /*(nav 최소높이 80px - menu_toggle_btn 이미지 높이 30px)/2 = 25px */
+        right: 30px;
+        z-index: 20;
+    } 
+
+    /* 태블릿 - 푸터 영역 CSS */
+    .footer p {
+        padding: 40px;
+    }       
+}
+
+
+/* PC용 CSS */
+@media all and (min-width: 960px) {
+    /* 기본 CSS */
+    #wrap {
+        display: flex; /* 모바일과 태블릿에 적용되었던 것과 동일하므로 안줘도 됨 */
+        flex-flow: row wrap; /* 태블릿에 적용되었던 것과 동일하므로 안줘도 됨 */
+        width: 90%;  /* PC에서 90%가 적당 */
+        position: relative;
+    }
+    /* PC - 인포 영역 CSS */
+    .info_section {
+        order: 0;
+        position: absolute;   /* 상단 우측 위에 오도록 하기 위해 */
+        top: 30px;
+        right: 30px;
+        z-index: 30;
+        width: auto;  /* 가로너비를 100%에서 auto로 수정, 자동으로 크기에 맞춤 */
+        border-bottom: 0;  /* 위에서 적용한 border-bottom: 1px solid #39d67c; 삭제 */
+    }
+
+    .info_list li {
+        width: auto;  /* 가로너비를 25%에서 auto로 수정, 육안으로 변화없음 */
+        margin-left: 15px;
+    }
+    .info_list li a {
+        padding: 0;   /* 위에서 적용한 padding 삭제 */
+    }
+
+    /* PC - 헤더 영역 CSS */
+    .header {
+        order: 1;
+        justify-content: flex-end;
+        position: static; 
+        /* 헤더 영역 내부의 요소들이 PC환경에서는 flex로만 적용시키기 위해서 모바일과 태블릿에서 적용한 position: relative;를 기본값인 position: static;으로 돌려놓는다  */
+    }
+
+    .logo {
+        width: 12.5%;  /* 120px/960px*100  (PC영역은 960px이므로 960px로 나눈다) */
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        position: static;   /* 태블릿에서 적용한 position 값을 기본값인 position: static;으로 돌려놓는다 */
+        width: 87.5%;  /* (960-120)/960*100=840/960*100 */
+    }
+
+    .gnb {
+        display: flex;
+        flex-direction: row;
+        position: static;   /* 태블릿에서 적용한 position 값을 기본값인 position: static;으로 돌려놓는다 */
+        width: 100%;
+    }
+
+    .gnb li {
+        display: block;   /* 위에서 적용한 것 변경 */
+        background: none;   /* 위에서 적용한 배경 샥제 */
+        margin-left: 5.95238%;   /* 50px/840px*100   (PC 960px에서 logo 120px을 뺀 nav 840px로 나눠야 한다) */
+    }
+
+    .gnb li a {
+        width: auto;  /* 모바일에서 적용한 크기 변경 */
+        padding: 0;   /* 모바일에서 적용한 padding 삭제 */
+        text-indent: 0;
+    }
+
+    .gnb li span {
+        display: none;  /* 하위 메뉴 토글 버튼인 span삭제하기 */
+    }
+
+    .menu_toggle_btn {
+        display: none;  /* PC에서는 이 버튼이 보일 필요 없으므로 위에서 적용한 것 삭제 */ 
+    }
+
+    /* PC - 푸터 영역 CSS */
+    .footer {
+        order: 9;
+    }
+
+    .footer p {
+        text-align: left;   /* 대부분 Pc에서는 이 내용이 좌측하단에 온다 */
+    }
+}
