@@ -13,5 +13,55 @@ SBS아카데미에서 진행한 수업의 일부입니다.
     - [ ] HTML
     - [ ] CSS
     - [x] JS
+# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+
+[이슈 페이지 바로가기](https://github.com/koeunLee/sbsweb-project-test/issues)
 
 
+**굵게 표현하기**
+
+*기울임꼴 표현하기*
+
+<u>밑줄 표현하기</u>
+
+
+```html
+<html>
+</html>
+```
+
+```css
+html {
+    border: 1px solid black;
+}
+```
+
+패딩을 넣는 방법은 `padding: 30px;` 입니다.
+
+순서가 없는 리스트
+- 가
+- 나
+- 다
+    - 라
+    - 마
+    - 바
+        - 사
+        - 아
+    - 자
+- 차
+
+순서가 있는 리스트
+1. A
+1. B
+1. C
+
+    a. D
+
+    b. E
+
+    c. F
